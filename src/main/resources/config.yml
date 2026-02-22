@@ -1,0 +1,37 @@
+# XzCore Configuration
+# Core services for the XzPlugin suite
+
+# Database configuration
+# Supports: SQLITE, MYSQL
+database:
+  type: SQLITE
+  
+  # Async executor threads
+  async-threads: 2
+  
+  # Connection pool settings
+  connection-timeout: 5000      # 5 seconds
+  idle-timeout: 300000          # 5 minutes
+  max-lifetime: 1800000         # 30 minutes
+  leak-detection: 60000         # 1 minute
+  
+  # SQLite-specific settings
+  sqlite:
+    file: "xzcore.db"
+    max-pool-size: 5
+    min-idle: 1
+    journal-mode: WAL           # WAL, DELETE, TRUNCATE, PERSIST, MEMORY, OFF
+    synchronous: NORMAL         # FULL, NORMAL, OFF
+  
+  # MySQL-specific settings (only used if type: MYSQL)
+  mysql:
+    host: "localhost"
+    port: 3306
+    database: "xzcore"
+    username: "root"
+    password: ""
+    max-pool-size: 10
+    min-idle: 5
+
+# Debug mode
+debug: false

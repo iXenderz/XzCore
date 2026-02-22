@@ -1,0 +1,20 @@
+# XzCore - Java Plugin Gitignore
+
+# Build outputs
+build/
+.gradle/
+*.jar
+!gradle/wrapper/gradle-wrapper.jar
+
+# IDE
+.idea/
+*.iml
+.classpath
+.project
+.settings/
+
+# Testing
+.test-results/
+
+# Local config
+src/main/resources/config.local.yml

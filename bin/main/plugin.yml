@@ -1,0 +1,29 @@
+name: XzCore
+version: ${version}
+main: com.xzatrix.xzcore.XzCore
+api-version: '1.21'
+author: Xzatrix
+description: Core API and services for XzPlugin suite
+
+# XzCore is a library plugin that other plugins depend on
+# It provides database, events, and player data services
+
+softdepend:
+  - Vault
+  - PlaceholderAPI
+
+commands:
+  xzcore:
+    description: XzCore administration commands
+    usage: /<command> [reload|status|save]
+    permission: xzcore.admin
+    permission-message: "§cYou don't have permission to use this command."
+
+permissions:
+  xzcore.admin:
+    description: Access to XzCore admin commands
+    default: op
+  
+  xzcore.debug:
+    description: Access to debug information
+    default: op
