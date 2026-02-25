@@ -57,6 +57,35 @@ tasks {
         archiveClassifier.set("")
         // HikariCP and SQLite are API dependencies - don't shade them
         // Let consuming plugins shade if needed
+        
+        // OPTIMIZATION: Exclude unnecessary SQLite native libraries
+        // Most Minecraft servers run on Linux x86_64. Include Windows for local testing.
+        // Exclude: Mac, FreeBSD, Android, ARM variants, 32-bit, musl variants
+        exclude("org/sqlite/native/Mac/**")
+        exclude("org/sqlite/native/FreeBSD/**")
+        exclude("org/sqlite/native/Linux-Android/**")
+        exclude("org/sqlite/native/Linux-Musl/**")
+        exclude("org/sqlite/native/Linux/arm/**")
+        exclude("org/sqlite/native/Linux/armv*/**")
+        exclude("org/sqlite/native/Linux/ppc64/**")
+        exclude("org/sqlite/native/Linux/riscv64/**")
+        exclude("org/sqlite/native/Linux/x86/**")  // 32-bit
+        exclude("org/sqlite/native/Windows/**")  // Linux only
+        
+        // OPTIMIZATION: Exclude unused Kyori Adventure components
+        // Paper already bundles Adventure API
+        exclude("net/kyori/adventure/**")
+        exclude("net/kyori/examination/**")
+        
+        // OPTIMIZATION: Exclude unused logging frameworks
+        exclude("org/slf4j/**")
+        
+        // OPTIMIZATION: Exclude protobuf (used by MySQL connector but not needed for SQLite)
+        exclude("com/google/protobuf/**")
+        
+        minimize {
+            exclude({ it.moduleGroup == "org.xerial" && it.moduleName == "sqlite-jdbc" })
+        }
     }
     
     build {

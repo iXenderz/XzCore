@@ -1,1 +1,1 @@
-rootProject.name = "XzCorruption"
+rootProject.name = "XzCore"
