@@ -1,6 +1,6 @@
 name: XzCore
 version: ${version}
-main: com.xzatrix.xzcore.XzCore
+main: com.xenderz.xzcore.XzCore
 api-version: '1.21'
 author: Xzatrix
 description: Core API and services for XzPlugin suite

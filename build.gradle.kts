@@ -4,7 +4,7 @@ plugins {
     id("maven-publish")
 }
 
-group = "com.xzatrix"
+group = "com.xenderz"
 version = "1.0.0"
 
 repositories {
@@ -107,7 +107,7 @@ tasks {
 publishing {
     publications {
         create<MavenPublication>("mavenJava") {
-            groupId = "com.xzatrix"
+            groupId = "com.xenderz"
             artifactId = "xzcore"
             version = project.version.toString()
             
@@ -130,8 +130,8 @@ publishing {
                 
                 developers {
                     developer {
-                        id.set("xzatrix")
-                        name.set("Xzatrix")
+                        id.set("xenderz")
+                        name.set("Xenderz")
                     }
                 }
             }

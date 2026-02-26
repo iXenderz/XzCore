@@ -1,4 +1,4 @@
-package com.xzatrix.xzcore.{{PACKAGE}};
+package com.xenderz.xzcore.{{PACKAGE}};
 
 import org.bukkit.plugin.java.JavaPlugin;
 
