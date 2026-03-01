@@ -2,6 +2,7 @@ package com.xenderz.xzcore.api;
 
 import com.xenderz.xzcore.database.DatabaseManager;
 import com.xenderz.xzcore.events.EventBus;
+
 import com.xenderz.xzcore.player.PlayerData;
 import com.xenderz.xzcore.player.PlayerDataManager;
 import org.bukkit.entity.Player;
@@ -91,4 +92,5 @@ public interface XzCoreAPI {
      * @return version string
      */
     String getVersion();
+    
 }

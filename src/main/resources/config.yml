@@ -33,5 +33,10 @@ database:
     max-pool-size: 10
     min-idle: 5
 
+# NPC Manager configuration
+npc:
+  # Auto-cleanup orphaned NPC entities on chunk load
+  auto-cleanup: true
+
 # Debug mode
 debug: false

@@ -77,9 +77,11 @@ public class DatabaseManager implements Service {
         );
         
         setupDataSource();
+        
+        // Mark as initialized before creating tables so getConnection() works
+        initialized = true;
         createCoreTables();
         
-        initialized = true;
         plugin.getLogger().info("Database initialized: " + databaseType + " with HikariCP pool");
     }
     

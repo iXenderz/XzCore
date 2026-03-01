@@ -1,6 +1,7 @@
 package com.xenderz.xzcore;
 
 import com.xenderz.xzcore.api.XzCoreAPI;
+import com.xenderz.xzcore.commands.XzCoreCommand;
 import com.xenderz.xzcore.database.DatabaseManager;
 import com.xenderz.xzcore.events.EventBus;
 import com.xenderz.xzcore.player.PlayerDataManager;
@@ -55,6 +56,9 @@ public class XzCore extends JavaPlugin {
             
             // Initialize services that need the API available
             services.initialize();
+            
+            // Register commands
+            registerCommands();
             
             initialized = true;
             getLogger().info("XzCore v" + getDescription().getVersion() + " enabled successfully!");
@@ -115,11 +119,21 @@ public class XzCore extends JavaPlugin {
     }
     
     /**
-     * Get the service container (internal use only).
+     * Get the service container.
      * 
      * @return ServiceContainer
      */
-    ServiceContainer getServiceContainer() {
+    public ServiceContainer getServiceContainer() {
         return services;
+    }
+    
+    /**
+     * Register plugin commands
+     */
+    private void registerCommands() {
+        // Main XzCore command (includes npc subcommand)
+        XzCoreCommand coreCommand = new XzCoreCommand(this);
+        getCommand("xzcore").setExecutor(coreCommand);
+        getCommand("xzcore").setTabCompleter(coreCommand);
     }
 }
