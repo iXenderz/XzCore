@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "com.xenderz"
-version = "1.0.1"
+version = "1.0.2"
 
 repositories {
     mavenCentral()
@@ -14,25 +14,25 @@ repositories {
 }
 
 dependencies {
-    compileOnly("io.papermc.paper:paper-api:1.21.4-R0.1-SNAPSHOT")
-    
+    compileOnly("io.papermc.paper:paper-api:1.21.11-R0.1-SNAPSHOT")
+
     // HikariCP for connection pooling
     api("com.zaxxer:HikariCP:6.2.1")
-    
+
     // SQLite JDBC
     api("org.xerial:sqlite-jdbc:3.47.1.0")
-    
+
     // MySQL Connector (optional)
     api("com.mysql:mysql-connector-j:9.1.0")
-    
+
     // Adventure API (for components)
     compileOnly("net.kyori:adventure-api:4.17.0")
-    
+
     // JUnit 5 for testing
     testImplementation("org.junit.jupiter:junit-jupiter:5.11.3")
     testImplementation("org.mockito:mockito-core:5.14.2")
     testImplementation("org.mockito:mockito-junit-jupiter:5.14.2")
-    testImplementation("io.papermc.paper:paper-api:1.21.4-R0.1-SNAPSHOT")
+    testImplementation("io.papermc.paper:paper-api:1.21.11-R0.1-SNAPSHOT")
 }
 
 java {
